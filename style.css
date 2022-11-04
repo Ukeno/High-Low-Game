@@ -1,0 +1,85 @@
+body {
+     box-sizing: content-box;
+}
+
+* {
+    border: 0 solid red;
+    margin: auto;
+}
+
+.container {
+    display: flex;
+    margin: auto;
+    min-height: 30vh;
+    background-color: lightgrey;
+    flex-direction: column;
+}
+
+header {
+    margin: 10px;
+    font-size: 25px;
+    text-align: center;
+    background-color: whitesmoke;
+    border: 1px solid black;
+}
+
+#Hand {
+    margin: auto;
+    width: 17vw;
+    height: 50vh;
+    display: flex;
+    border-radius: .5rem;
+    border: 1px solid black;
+    background-color: whitesmoke;
+}
+
+.card {
+    position: relative;
+    display: column;
+    border: 1px solid black;
+}
+
+#cardValue {
+
+    font-size: 3rem;
+    border: 1px solid red;
+}
+
+#cardSuit {
+
+    font-size: 6rem;
+    border: 1px solid red;
+}
+
+#cardWeight {
+    display: none;
+}
+
+.higherButton {
+    border-style: groove;
+    border-width: 3px;
+    border-color: grey;
+    border-radius: 4px;
+}
+
+.lowerButton {
+    border-style: groove;
+    border-width: 3px;
+    border-color: grey;
+    border-radius: 4px;
+}
+
+.restButton {
+    border-style: groove;
+    border-width: 3px;
+    border-color: grey;
+    border-radius: 4px;
+}
+
+.bottomBox {
+    margin: 10px;
+    padding: 1vh 1vw 1vh;
+    font-size: 15px;
+    background-color: whitesmoke;
+    border-color: 1px solid black;
+}
