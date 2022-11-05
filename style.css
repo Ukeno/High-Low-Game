@@ -1,5 +1,5 @@
 body {
-     box-sizing: content-box;
+    box-sizing: border-box;
 }
 
 * {
@@ -11,51 +11,57 @@ body {
     display: flex;
     margin: auto;
     min-height: 30vh;
-    background-color: lightgrey;
+    background-color:beige;
     flex-direction: column;
 }
 
 header {
-    margin: 10px;
-    font-size: 25px;
+    margin: 19px;
+    padding: 3vh 1vw 3vh;
+    flex-grow: .5;
+    font-size: 30px;
     text-align: center;
-    background-color: whitesmoke;
+    background-color: lightgrey;
     border: 1px solid black;
+    font-size: 1.5rem;
 }
 
 #Hand {
-    margin: auto;
-    width: 17vw;
-    height: 50vh;
-    display: flex;
+    padding: -9px;
     border-radius: .5rem;
-    border: 1px solid black;
-    background-color: whitesmoke;
 }
 
 .card {
     position: relative;
-    display: column;
-    border: 1px solid black;
-}
-
-#cardValue {
-
-    font-size: 3rem;
-    border: 1px solid red;
-}
-
-#cardSuit {
-
-    font-size: 6rem;
-    border: 1px solid red;
+    margin: -.5px;
+    height: 50vh;
+    width: 17vw;
+    border: 2px solid black;
+    border-radius: .5rem;
+    display: inline;
+    float: left;
+    font-size: 8rem;
+    background-color: whitesmoke;
 }
 
 #cardWeight {
     display: none;
 }
 
+#cardValue {
+    padding: .5rem;
+    font-size: 4rem;
+}
+
+#cardSuit {
+    position: flex;
+    display: inline;
+    margin: 5px 50px -10px;
+    font-size: 11rem;
+}
+
 .higherButton {
+    margin: 20px;
     border-style: groove;
     border-width: 3px;
     border-color: grey;
@@ -63,23 +69,33 @@ header {
 }
 
 .lowerButton {
+    margin: 20px;
     border-style: groove;
     border-width: 3px;
     border-color: grey;
     border-radius: 4px;
 }
 
+#result {
+    padding: 2px;
+}
+
+#score {
+    padding: 2px;
+}
 .restButton {
     border-style: groove;
     border-width: 3px;
     border-color: grey;
     border-radius: 4px;
 }
-
 .bottomBox {
-    margin: 10px;
-    padding: 1vh 1vw 1vh;
-    font-size: 15px;
-    background-color: whitesmoke;
-    border-color: 1px solid black;
+    margin: 19px;
+    padding: 3vh 1vw 3vh;
+    flex-grow: .5;
+    font-size: 30px;
+    text-align: center;
+    background-color: lightgrey;
+    border: 1px solid black;
+    font-size: 1rem;
 }
