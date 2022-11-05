@@ -1,24 +1,18 @@
+/*** Sends to html h2/p tags ***/
 let cardHTML = document.getElementById("card");
 let scoreHTML = document.getElementById("score");
 let resultHTML = document.getElementById("result");
 
+/*** Create cards ***/
 const suits = ["♠", "♥", "♣", "♦"]
 const values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 
-function shuffle(deck) {
-    for (let i = 0; i < deck.length; i++) {
-        let j = Math.floor(Math.random() * deck.length);
-        let temp = deck[i]
-        deck[i] = deck[j]
-        deck[j] = temp
-    }
-}
-
+/***  Create Deck combine suit and value ***/
 let deck = []
 function createDeck() {
     for (let i = 0; i < suits.length; i++) {
-        for (let j = 0; j < values.length; j++) {
-            cardValue = values[j]
+        for (let x = 0; x < values.length; x++) {
+            cardValue = values[x]
             cardSuit = suits[i]
             let weight = parseInt(cardValue);
             if (cardValue === "J" || cardValue === "Q" || cardValue === "K") {
@@ -50,23 +44,33 @@ function createDeck() {
     }
 }
 
+/*** Shuffle so deck not sequential ***/
+function shuffle(deck) {
+    for (let i = 0; i < deck.length; i++) {
+        let x = Math.floor(Math.random() * deck.length);
+        let temp = deck[i]
+        deck[i] = deck[x]
+        deck[x] = temp
+    }
+}
+
+/*** Game start ***/
 let playerTotal = 0
 
 function startGame() {
     createDeck()
     shuffle(deck)
-
 }
-startGame()
 
+startGame()
+/***  ***/
 function getValue(card) {
     data = card.childNodes[2].innerHTML
     return parseInt(data)
 }
-
-
-
-let numQuestionsAsked = 0; 
+/*
+/*** Starts count at 0| Generates new card | Prints to data to html ***/
+let numQuestionsAsked = 1; 
 let numCorrect = 0;
 
 let previousCardValue = 0
@@ -80,11 +84,15 @@ function resetCardGame() {
     scoreHTML.innerText = "You've got " + numCorrect + "/" + numQuestionsAsked + " correct.";
     return previousCardValue
 }
+
+/*** Compare cards ***/
 function setPreviousCard(newCard) {
     previousCard = newCard
     previousCardValue = getValue(previousCard)
     return previousCardValue
 }
+
+/*** Submit ***/
 function submitGuess(highLowGuess) {
     let newCard = generateCard()
     let correctGuess = guessCard(highLowGuess, newCard);
@@ -94,11 +102,10 @@ function submitGuess(highLowGuess) {
     modifyCardGameHTML(correctGuess);
     setPreviousCard(newCard);
 }
-
+/*** Generates new card ***/
 function generateCard() {
     randomNumber = 0;
     let randomCard = 0;
-
     for (let i = 0; i < 1; i++) {
         randomCard = deck.pop()
         randomNumber = getValue(randomCard)
@@ -108,7 +115,7 @@ function generateCard() {
     }
     return randomNumber
 }
-
+/*** previousCard ? ***/
 function guessCard(highLowGuess, newCard) {
     let correctGuess;
 
@@ -129,13 +136,12 @@ function guessCard(highLowGuess, newCard) {
         }
     }
     else {
-        console.log("No guess provided");
         correctGuess = false;
     }
 
     return correctGuess;
 }
-
+/*** Score count ***/
 function updateScores(correctGuess) {
     if (correctGuess) {
         numCorrect++;
@@ -143,7 +149,7 @@ function updateScores(correctGuess) {
 
     numQuestionsAsked++;
 }
-
+/*** Loop for text in html ***/
 function modifyCardGameHTML(correctGuess) {
     let resultString = "";
 
@@ -154,7 +160,7 @@ function modifyCardGameHTML(correctGuess) {
     resultHTML.innerText = "You were: " + resultString;
     scoreHTML.innerText = "You've got " + numCorrect + "/" + numQuestionsAsked + " correct.";
 }
-
+/*** Rests after every submit ***/
 resetCardGame();
 
 
