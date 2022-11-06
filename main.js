@@ -59,9 +59,13 @@ function startGame() {
 
 startGame()
 
+/*
+var myInnerHtml = document.getElementById('weight').innerHTML
+*/
 function getValue(card) {
    data = card.childNodes[2].innerHTML
    return parseInt(data)
+    //console.log(card.childNodes[2])
 }
 
 let numQuestionsAsked = 0; 
@@ -72,6 +76,8 @@ let randomNumber = 0;
 
 function resetCardGame() {
     previousCard = generateCard();
+    // previousCardValue = getValue(previousCard)
+
     resultHTML.innerText = "You were: ";
     scoreHTML.innerText = "You've got " + numCorrect + "/" + numQuestionsAsked + " correct.";
     return previousCardValue
@@ -79,6 +85,7 @@ function resetCardGame() {
 
 function setPreviousCard(newCard) {
     previousCard = newCard
+    //previousCardValue = getValue(previousCard)
     return previousCardValue
 }
 

@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <div class="container" id="img">
         <header>Higher/Lower Game</header>
         <h3>Current Card</h3>
@@ -21,21 +20,18 @@
         <div>
             <input type="button" class="higherButton" onclick="submitGuess('Higher')" value="Higher">&emsp;&emsp;
             <input type="button" class="lowerButton" onclick="submitGuess('Lower')" value="Lower">
-            <br>
         </div>
-
-        <div><!-- new div -->
-        <p id="result">You were:</p>
-        <p id="score">You've got 0/0 corrrect.</p>
+        <div>
+            <p id="result">You were:</p>&emsp;
+            <p id="score">You've got 0/0 corrrect.</p>
         </div>
-        <div><!-- new div -->
-        <input type="button" class="restButton" onclick="location.href='index.html';" value="Reset">
+        <div>
+            <input type="button" class="restButton" onclick="location.href='index.html';" value="Reset">
         </div>
         <div class="bottomBox">
             <p>Instructions: Guess if the next card is higher or lower.
                 Game ends when 51 cards are played and if you get more correct you win... Good luck!</p>
         </div>
-
     </div>
     <script src="main.js"></script>
 </body>
