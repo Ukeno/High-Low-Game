@@ -150,8 +150,8 @@ function modifyCardGameHTML(correctGuess) {
     let resultString = "";
 
     if (correctGuess) {
-        resultString = "Correct";
-    } else resultString = "Incorrect";
+        resultString = "Correct!";
+    } else resultString = "Incorrect!";
 
     resultHTML.innerText = "You were: " + resultString;
     scoreHTML.innerText = "You've got " + numCorrect + "/" + numQuestionsAsked + " correct.";
