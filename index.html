@@ -10,22 +10,20 @@
 </head>
 
 <body>
-    <div class="container" id="img">
+    <div class="container">
         <header>Higher/Lower Game</header>
         <h3>Current Card</h3>
-        
         <div id="Hand"></div>
-        
         <div class="theNext">The next card will be...</div>
-        <div>
+        <div class="buttons">
             <input type="button" class="higherButton" onclick="submitGuess('Higher')" value="Higher">&emsp;&emsp;
             <input type="button" class="lowerButton" onclick="submitGuess('Lower')" value="Lower">
-        </div>
+        </div><br>
         <div class="resultScore">
             <p id="result">You were:</p> &#45;&#58;&#45;
             <p id="score">You've got 0/0 corrrect.</p>
         </div>
-        <div>
+        <div class="resetBTN"><br>
             <input type="button" class="restButton" onclick="location.href='index.html';" value="Reset">
         </div>
         <div class="bottomBox">

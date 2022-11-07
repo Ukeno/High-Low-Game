@@ -40,7 +40,7 @@ function createDeck() {
         }
     }
 }
-
+// Replaces 1 object with another by 1
 function shuffle(deck) {
     for (let i = 0; i < deck.length; i++) {
         let x = Math.floor(Math.random() * deck.length);
@@ -59,13 +59,10 @@ function startGame() {
 
 startGame()
 
-/*
-var myInnerHtml = document.getElementById('weight').innerHTML
-*/
+
 function getValue(card) {
    data = card.childNodes[2].innerHTML
    return parseInt(data)
-    //console.log(card.childNodes[2])
 }
 
 let numQuestionsAsked = 0; 
@@ -76,7 +73,6 @@ let randomNumber = 0;
 
 function resetCardGame() {
     previousCard = generateCard();
-    // previousCardValue = getValue(previousCard)
 
     resultHTML.innerText = "You were: ";
     scoreHTML.innerText = "You've got " + numCorrect + "/" + numQuestionsAsked + " correct.";
@@ -85,10 +81,10 @@ function resetCardGame() {
 
 function setPreviousCard(newCard) {
     previousCard = newCard
-    //previousCardValue = getValue(previousCard)
+
     return previousCardValue
 }
-
+// everytime you guess the hand.firstchild.remove() removes the current card from the screen
 function submitGuess(highLowGuess) {
     let newCard = generateCard()
     let correctGuess = guessCard(highLowGuess, newCard);
@@ -98,7 +94,7 @@ function submitGuess(highLowGuess) {
     modifyCardGameHTML(correctGuess);
     setPreviousCard(newCard);
 }
-
+// then this function replaces the old card with a new one 
 function generateCard() {
     randomNumber = 0;
     let randomCard = 0;
