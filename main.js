@@ -1,10 +1,12 @@
 let cardHTML = document.getElementById("card");
 let scoreHTML = document.getElementById("score");
 let resultHTML = document.getElementById("result");
-
+// ^variable declaration ^
+// suits and value arrays 
 const suits = ["♠", "♥", "♣", "♦"]
 const values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 
+// creats the deck and pushes to html element
 let deck = []
 function createDeck() {
     for (let i = 0; i < suits.length; i++) {
@@ -40,7 +42,7 @@ function createDeck() {
         }
     }
 }
-// Replaces 1 object with another by 1
+//  randomizes the order of the elements in the arrays 
 function shuffle(deck) {
     for (let i = 0; i < deck.length; i++) {
         let x = Math.floor(Math.random() * deck.length);
@@ -52,6 +54,7 @@ function shuffle(deck) {
 
 let playerTotal = 0
 
+// starts game on load. calls deck and shuffles
 function startGame() {
     createDeck()
     shuffle(deck)
@@ -59,7 +62,7 @@ function startGame() {
 
 startGame()
 
-
+// returns the value of a variable when the variable name is not known at compilation time
 function getValue(card) {
    data = card.childNodes[2].innerHTML
    return parseInt(data)
@@ -70,7 +73,7 @@ let numCorrect = 0;
 
 let previousCardValue = 0
 let randomNumber = 0; 
-
+// displays score
 function resetCardGame() {
     previousCard = generateCard();
 
@@ -78,11 +81,10 @@ function resetCardGame() {
     scoreHTML.innerText = "You've got " + numCorrect + "/" + numQuestionsAsked + " correct.";
     return previousCardValue
 }
-
+// assigns the number 0 to each set
 function setPreviousCard(newCard) {
     previousCard = newCard
-
-    return previousCardValue
+    return previousCard
 }
 // everytime you guess the hand.firstchild.remove() removes the current card from the screen
 function submitGuess(highLowGuess) {
@@ -107,7 +109,7 @@ function generateCard() {
     }
     return randomNumber
 }
-
+// guess arguments 
 function guessCard(highLowGuess, newCard) {
     let correctGuess;
 
@@ -133,7 +135,7 @@ function guessCard(highLowGuess, newCard) {
 
     return correctGuess;
 }
-
+// allows the database server to handle in-place updates of opaque data type values
 function updateScores(correctGuess) {
     if (correctGuess) {
         numCorrect++;
@@ -141,7 +143,7 @@ function updateScores(correctGuess) {
 
     numQuestionsAsked++;
 }
-
+// used to change the definition
 function modifyCardGameHTML(correctGuess) {
     let resultString = "";
 
